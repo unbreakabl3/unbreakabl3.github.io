@@ -1,9 +1,11 @@
 ---
-title: VMware vRA + Keycloak (using SAML) + LDAP — is it possible?
+title: VMware vRA + Keycloak (using SAML) + LDAP
 date: 2024-02-20
-categories: [VMware, "Test Post"]
-tags: [vmware, vIDM, Keycloak, vRA, Aria Automation]
+categories: [VMware, Keycloak, vIDM, vRA]
+tags: [VMware, vIDM, Keycloak, vRA, Aria Automation]
 ---
+
+## Keycloak configuration
 
 Let's explore integrating Keycloak (backed by Open LDAP) as an Identity Provider for VMware Identity Manager.
 
@@ -65,7 +67,9 @@ To use a `username` attribute as a login name, we need to make sure this attribu
 ![img-description](/assets/img/vmware-with-keyloak/1*iostWxkzAIcjJ7pchEQ4Yg.png){: .shadow }
 _Keycloak_
 
-Now, let's take care of IDM. We need to create a new Identity Provider and Directories, which will use this IdP.
+## IDM configuration
+
+To explore this further, let's take care of IDM. We need to create a new Identity Provider and Directories, which will use this IdP.
 
 - Keycloak > Realm > Realm Settings > General > Endpoints > SAML 2.0 Identity Provider Metadata
 
@@ -78,7 +82,7 @@ The link should look like this: `https://SSO.DOMAIN/realms/REALM-NAME/protocol/s
 
 - Login into VMware Identity Manager (IDM) > Administration Console > Identity & Access Management > Identity Providers > Add Identity Provider > Create Third Party IDP
   - provide the IdP name (can be any name)
-  - paste the SSO Metadata URL into the SAML Metadata window and click on Proceed IdP Metadata. Remove all Name ID formats except the `email` and/or `userName` (this should allow us to login into vRA with LDAP username or email attributes).
+  - paste the SSO Metadata URL into the SAML Metadata window and click on Proceed IdP Metadata. Remove all Name ID formats except the `email` and/or `userName` (this should allow us to log into vRA with LDAP username or email attributes).
 
 ![img-description](/assets/img/vmware-with-keyloak/1*qUcyuJzcUE8gtGza4yPCRg.png){: .shadow }
 _VMware IDM_
@@ -117,7 +121,7 @@ _VMware IDM_
 
 Let’s check if we have a new directory.
 
-- IDM > Administration Console > Identity & Access Management > Directories. There you should see a new directory of type Just-In-Time
+- IDM > Administration Console > Identity & Access Management > Directories. There, we should see a new directory of the type Just-In-Time
 
 ![img-description](/assets/img/vmware-with-keyloak/1*gJY_9dQTc_H0bmnezBFLYw.png){: .shadow }
 _VMware IDM_
@@ -126,7 +130,7 @@ The IDM uses policies to control the authentication way. Let's update it to use 
 
 - IDM > Administration Console > Identity & Access Management > Policies
 
-There is an option to edit a default policy or create a new one. For testing purposes, we’ll edit the default policy.
+There is an option to edit a default policy or create a new one. For testing purposes, we’ll revise the default policy.
 
 ![img-description](/assets/img/vmware-with-keyloak/1*AB2tNafRVD0X2FpQEN4XJA.png){: .shadow }
 _VMware IDM_
@@ -141,11 +145,13 @@ Here, we need to select our SSO as a fallback authentication method.
 ![img-description](/assets/img/vmware-with-keyloak/1*XiuH3eh8bjUBDXXXd3sjsg.png){: .shadow }
 _VMware IDM_
 
-> SSO can be set as a primary authentication method, but in case of any issue with Keycloak, users will see the error page, and the IDM administrative console will not be available for access as well because everything will be redirected to SSO first. Just keep it in mind.
+> SSO can be set as a primary authentication method. Still, in case of any issue with Keycloak, users will see the error page, and the IDM administrative console will not be available for access because everything will be redirected to SSO first. Just keep it in mind.
 > PS. There is a backdoor if you can't log in to IDM with an AD/LDAP user. Go to `https://idm/SAAS/login/0`
 {: .prompt-info }
 
-The last thing we need to do — certificates. SAML is all about certs, therefore, we have to add Keycloak’s certificate to the IDM’s Trusted CA's store.
+## Export certificate
+
+The last thing we need to do — certificates. SAML is all about certs. Therefore, we must add Keycloak’s certificate to the IDM’s Trusted CA store.
 
 - Go to Keycloak  `https://sso.domain`
   - Obtain Keycloak’s certificate from the browser and save it to the file
@@ -160,7 +166,9 @@ _Keycloak_
 
 - Open the saved certificate with any text editor and copy and paste it into the IDM Trusted CAs store.
 
-Now, let's add the certificate to the Identity Manager
+## Add certificate
+
+Building on what we've discussed, let's add the certificate to the Identity Manager.
 
 - IDM > Administration Console > Appliance Settings> Manage Configuration > Install SSL Certificates > Trusted CAs
 
@@ -170,16 +178,18 @@ _VMware IDM_
 ![img-description](/assets/img/vmware-with-keyloak/1*13O9kWoGVEYk465lPnQZVg.png){: .shadow }
 _VMware IDM_
 
-It is time to test our setup. Go to the vRA login page and click on GO TO LOGIN PAGE
+## Login in
+
+It is time to test our setup. Go to the vRA login page and click on GO TO LOGIN PAGE.
 
 ![img-description](/assets/img/vmware-with-keyloak/1*Jm42V7O4Vj_YUvcbTCyIIg.png){: .shadow }
 
-vRA will redirect us to the IDM login page, which will propose us to use a built-in System Domain directory and our new SSO.DOMAIN directory
+vRA will redirect us to the IDM login page, proposing we use a built-in System Domain directory and our new SSO.DOMAIN directory
 
 ![img-description](/assets/img/vmware-with-keyloak/1*NE8sBTU2IkH9Porv9C5BPg.png){: .shadow }
 
-Select SSO.DOMAIN from the dropdown menu, and IDM will redirect us to the Keycloak login page.
+Select `SSO.DOMAIN` from the dropdown menu, and IDM will redirect us to the Keycloak login page.
 
 ![img-description](/assets/img/vmware-with-keyloak/1*h9bwiCwZOfKyw0T-LR6bdw.png){: .shadow }
 
-Provide the username and password, and if everything was done properly, Keycloak should authenticate the user and redirect back to vRA.
+Provide the username and password, and if everything was done correctly, Keycloak should authenticate the user and redirect them back to vRA.
