@@ -1,4 +1,7 @@
 # The Site Configuration
+author:
+  name: clouddepth
+  url: https://clouddepth.com
 
 # Import the theme
 theme: jekyll-theme-chirpy
