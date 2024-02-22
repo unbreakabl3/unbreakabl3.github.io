@@ -1,8 +1,8 @@
 ---
-title: VMware vRA + Keycloak (using SAML) + LDAP
+title: VMware Aria Automation + Keycloak (using SAML) + LDAP
 date: 2024-02-22
 categories: [VMware, Keycloak, vIDM, vRA]
-tags: [VMware, vIDM, Keycloak, vRA, Aria Automation]
+tags: [VMware, vIDM, Keycloak, vRA, Aria Automation, vRealize Automation]
 ---
 
 I got an idea to check if using Keycloak as an IdP for VMware Aria Automation is possible. Let's find out.
@@ -23,7 +23,7 @@ _VMware IDM_
 ![img-description](/assets/img/vmware-with-keyloak/1*2KdtwEv-DH_enVgoBampfQ.png){: .shadow }
 _VMware IDM_
 
-### Create new client
+### Create a new client
 
 Now, let us proceed to access Keycloak and initiate the creation of a new client.
 
