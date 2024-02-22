@@ -47,13 +47,13 @@ social:
     # - https://www.facebook.com/username
     # - https://www.linkedin.com/in/username
 
-google_site_verification: 50c3da3570db1150747c0368dff882
+google_site_verification: "50c3da3570db1150747c0368dff882"
 
 # ↑ --------------------------
 # The end of `jekyll-seo-tag` settings
 
 google_analytics:
-  id: G-X0290SPTZV
+  id: "G-X0290SPTZV"
 
 goatcounter:
   id: 80594736089000
