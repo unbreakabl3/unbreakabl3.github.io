@@ -1,11 +1,15 @@
 ---
 title: VMware vRA + Keycloak (using SAML) + LDAP
-date: 2024-02-20
+date: 2024-02-22
 categories: [VMware, Keycloak, vIDM, vRA]
 tags: [VMware, vIDM, Keycloak, vRA, Aria Automation]
 ---
 
+I got an idea to check if using Keycloak as an IdP for VMware Aria Automation is possible. Let's find out.
+
 ## Keycloak configuration
+
+### Export vIDM metadata
 
 Let's explore integrating Keycloak (backed by Open LDAP) as an Identity Provider for VMware Identity Manager.
 
@@ -18,6 +22,8 @@ _VMware IDM_
 
 ![img-description](/assets/img/vmware-with-keyloak/1*2KdtwEv-DH_enVgoBampfQ.png){: .shadow }
 _VMware IDM_
+
+### Create new client
 
 Now, let us proceed to access Keycloak and initiate the creation of a new client.
 
@@ -126,6 +132,8 @@ Let’s check if we have a new directory.
 ![img-description](/assets/img/vmware-with-keyloak/1*gJY_9dQTc_H0bmnezBFLYw.png){: .shadow }
 _VMware IDM_
 
+### Configure vIDM policy
+
 The IDM uses policies to control the authentication way. Let's update it to use our brand-new IdP.
 
 - IDM > Administration Console > Identity & Access Management > Policies
@@ -149,7 +157,9 @@ _VMware IDM_
 > PS. There is a backdoor if you can't log in to IDM with an AD/LDAP user. Go to `https://idm/SAAS/login/0`
 {: .prompt-info }
 
-## Export certificate
+## Certificates
+
+### Export certificate
 
 The last thing we need to do — certificates. SAML is all about certs. Therefore, we must add Keycloak’s certificate to the IDM’s Trusted CA store.
 
@@ -166,7 +176,7 @@ _Keycloak_
 
 - Open the saved certificate with any text editor and copy and paste it into the IDM Trusted CAs store.
 
-## Add certificate
+### Import certificate
 
 Building on what we've discussed, let's add the certificate to the Identity Manager.
 

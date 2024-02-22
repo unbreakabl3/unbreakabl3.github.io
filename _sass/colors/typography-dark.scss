@@ -6,21 +6,21 @@
   /* Framework color */
   --main-bg: rgb(27, 27, 30);
   --mask-bg: rgb(68, 69, 70);
-  --main-border-color: rgb(142, 93, 245);
+  --main-border-color: rgb(152, 112, 239);
   ;
 
   /* Common color */
   --text-color: rgb(175, 176, 177);
   --text-muted-color: #868686;
   --text-muted-hightlight-color: #aeaeae;
-  --heading-color: rgb(142, 93, 245);
-  --label-color: #00ff66;
+  --heading-color: rgb(152, 112, 239);
+  --label-color: #67e9e2;
   --blockquote-border-color: rgb(66, 66, 66);
   --blockquote-text-color: #868686;
   --link-color: rgb(138, 180, 248);
   --link-underline-color: rgb(82, 108, 150);
   --button-bg: #1e1e1e;
-  --btn-border-color: rgb(142, 93, 245);
+  --btn-border-color: rgb(152, 112, 239);
   --btn-backtotop-color: var(--text-color);
   --btn-backtotop-border-color: #212122;
   --btn-box-shadow: var(--main-bg);
@@ -38,7 +38,7 @@
   --site-subtitle-color: #868686;
   --sidebar-bg: #1e1e1e;
   --sidebar-border-color: #292929;
-  --sidebar-muted-color: rgb(142, 93, 245);
+  --sidebar-muted-color: rgb(152, 112, 239);
   ;
   --sidebar-active-color: rgb(255, 255, 255, 0.95);
   --sidebar-hover-bg: #262626;
@@ -49,7 +49,7 @@
   /* Topbar */
   --topbar-bg: rgb(27, 27, 30, 0.64);
   --topbar-text-color: var(--text-color);
-  --search-border-color: rgb(142, 93, 245);
+  --search-border-color: rgb(152, 112, 239);
   --search-icon-color: rgb(100, 102, 105);
   --input-focus-border-color: rgb(112, 114, 115);
 
@@ -87,9 +87,9 @@
   --prompt-danger-icon-color: #cd0202;
 
   /* tags */
-  --tag-border: rgb(142, 93, 245);
+  --tag-border: rgb(152, 112, 239);
   --tag-shadow: rgb(32, 33, 33);
-  --dash-color: rgb(142, 93, 245);
+  --dash-color: rgb(152, 112, 239);
   --search-tag-bg: #292828;
 
   /* categories */
