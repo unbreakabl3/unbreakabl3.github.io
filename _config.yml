@@ -17,12 +17,12 @@ timezone: Europe/Berlin
 # jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
 # ↓ --------------------------
 
-title: Welcome to my blog # the main title
+title: "Exploring IT Operations Automation: Insights and Reflections"  # the main title
 
 tagline: Nerd, books worm, Systems and Automation Engineer # it will display as the sub-title
 
 description: >- # used by seo meta and the atom feed
-  A minimal, responsive and feature-rich Jekyll theme for technical writing.
+  Develop IT automation orchestration & boost your DevOps!  Automate workflows, & crush time to market. Get tips & tools inside!  #ITautomation #DevOps #VMware Aria.
 
 # Fill in the protocol & hostname for your site.
 # e.g. 'https://username.github.io', note that it does not end with a '/'.
