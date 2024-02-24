@@ -1,7 +1,7 @@
 # The Site Configuration
 author:
   name: clouddepth
-  url: https://clouddepth.com
+  url: https://www.clouddepth.com
 
 # Import the theme
 theme: jekyll-theme-chirpy
@@ -26,7 +26,7 @@ description: >- # used by seo meta and the atom feed
 
 # Fill in the protocol & hostname for your site.
 # e.g. 'https://username.github.io', note that it does not end with a '/'.
-url: https://clouddepth.com
+url: https://www.clouddepth.com
 
 github:
   username: unbreakabl3 # change to your github username
