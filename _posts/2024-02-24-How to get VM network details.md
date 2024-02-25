@@ -86,4 +86,36 @@ The result was successful.
 
 ![img-description](/assets/img/vmware-how-to-get-VM-network-details/Pasted%20image%2020240224141306.png){: .shadow }
 
+## Transpiled result
+
+After the TypeScript transpilation is executed, we're getting the following JavaScript code, which can be used as an Action Element or somewhere inside the Scriptable Task in the Workflow:
+
+```javascript
+/**
+ * @return {Any}
+ */
+(function () {
+    var exports = {};
+    var SampleClass = /** @class */ (function () {
+        function SampleClass () {
+        }
+        SampleClass.prototype.getNetworkDetails = function (vm) {
+            var vcGuestNicInfo = vm.guest.net;
+            vcGuestNicInfo.forEach(function (element) {
+                System.log("MAC:  " + element.macAddress);
+                System.log("IP Address:  " + element.ipConfig.ipAddress[0].ipAddress);
+                System.log("Prefix:  " + element.ipConfig.ipAddress[0].prefixLength);
+            });
+            var vcGuestStackInfo = vm.guest.ipStack;
+            vcGuestStackInfo.forEach(function (element) {
+                System.log("Gateway: " + element.ipRouteConfig.ipRoute[0].gateway.ipAddress);
+            });
+        };
+        return SampleClass;
+    }());
+    exports.SampleClass = SampleClass;
+    return exports;
+});
+```
+
 Today, we saw how to get network details of the VM and test our code.
