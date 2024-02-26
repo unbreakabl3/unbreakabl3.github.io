@@ -2,7 +2,7 @@
 title: How to get VMware vCenter VM network details
 date: 2024-02-24
 categories: [VMware, Aria Orchestrator]
-tags: [VMware, Building Tools, TypeScript, Aria Orchestrator, Unit Test, Jasmine]
+tags: [vmware, building_tools, typescript, aria_orchestrator, unit_test, jasmine]
 ---
 
 Let's take a quick look at a simple one that returns the IP details of the VM running in VMware vCenter, using VSCode, Build Tools for VMware Aria, and Typescript project.

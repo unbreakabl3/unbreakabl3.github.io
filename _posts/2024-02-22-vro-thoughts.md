@@ -2,7 +2,7 @@
 title: Build Tools for VMware Aria
 date: 2024-02-22
 categories: [VMware, Aria Orchestrator]
-tags: [VMware, Building Tools, TypeScript, Aria Orchestrator]
+tags: [vmware, building_tools, typescript, aria_orchestrator]
 ---
 
 I am a big fan of VMware Aria Automation and VMware Aria Orchestrator (formerly vRealize Orchestrator) especially. I followed up on [this](https://github.com/vmware/build-tools-for-vmware-aria) project since it wasn't public yet, and from the beginning, it would open almost endless horizons for what we'll be able to do once it is publicly available. But I didn't realize how humble I was in my thoughts...

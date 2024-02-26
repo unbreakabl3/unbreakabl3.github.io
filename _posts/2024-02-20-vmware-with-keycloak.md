@@ -2,7 +2,7 @@
 title: VMware Aria Automation + Keycloak + LDAP
 date: 2024-02-22
 categories: [VMware, Keycloak, vIDM, vRA]
-tags: [VMware, vIDM, Keycloak, vRA, Aria Automation, vRealize Automation]
+tags: [vmware, vidm, keycloak, vra, aria_automation, vrealize_automation]
 ---
 
 I got an idea to check if using Keycloak as an IdP for VMware Aria Automation is possible. Let's find out.
