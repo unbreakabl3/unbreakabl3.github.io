@@ -17,7 +17,7 @@ timezone: Europe/Berlin
 # jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
 # ↓ --------------------------
 
-title: "Exploring IT Operations Automation: Insights and Reflections"  # the main title
+title: "Exploring IT Operations Automation: Insights and Reflections" # the main title
 
 tagline: Nerd, books worm, Systems and Automation Engineer # it will display as the sub-title
 
@@ -47,7 +47,7 @@ social:
     # - https://www.facebook.com/username
     # - https://www.linkedin.com/in/username
 
-google_site_verification: "50c3da3570db1150747c0368dff882"
+google_site_verification: 50c3da3570db1150747c0368dff882
 
 # ↑ --------------------------
 # The end of `jekyll-seo-tag` settings
@@ -56,7 +56,7 @@ google_analytics:
   # id: "G-X0290SPTZV"
 
 goatcounter:
-  id: 80594736089000
+  id: unbreakabl3
 
 # Prefer color scheme setting.
 #
