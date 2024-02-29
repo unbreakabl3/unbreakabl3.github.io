@@ -51,7 +51,12 @@ google_site_verification: 50c3da3570db1150747c0368dff882
 
 # ↑ --------------------------
 # The end of `jekyll-seo-tag` settings
-
+# Web Analytics Settings
+analytics:
+  google:
+    id: # fill in your Google Analytics ID
+  goatcounter:
+    id: unbreakabl3
 google_analytics:
   # id: "G-X0290SPTZV"
 
