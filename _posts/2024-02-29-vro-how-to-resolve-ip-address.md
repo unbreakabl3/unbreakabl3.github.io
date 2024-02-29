@@ -1,14 +1,13 @@
 ---
-title: How to resolve FQDN in Aria Orchestrator
+title: How to resolve FQDN to an IP address in Aria Orchestrator
 date: 2024-02-29
 categories: [VMware, Aria Orchestrator]
 tags: [vmware, building_tools, typescript, aria_orchestrator, unit_test, jasmine]
 ---
-## How to resolve FQDN to an IP address in Aria Orchestrator
 
-Let’s see how we can use the built-in ￼`System.resolveHostName()`￼ method in vRO to resolve the FQDN to the IP address.
+Let’s see how we can use the built-in `System.resolveHostName()` method in vRO to resolve the FQDN to the IP address.
 
-### Implementation
+## Implementation
 
 We’re going to create a new class with a few methods:
 
@@ -18,9 +17,9 @@ We’re going to create a new class with a few methods:
 
 Let’s say we created a new A record in the DNS server and must wait until the address is resolved to continue the workflow. It may take some time until the IP is resolved. Therefore, we’ll need to wait and try a few times. If, after a few retries, the IP is still not resolvable, we’ll throw an error.
 
-#### waitForDNSResolve()
+### waitForDNSResolve()
 
-Here, a function ￼`waitForDNSResolve()`￼ accepts a host FQDN as a string. The function will try to resolve the FQDN 20 times and wait for 60 seconds between retries.
+Here, a function `waitForDNSResolve()` accepts a host FQDN as a string. The function will try to resolve the FQDN 20 times and wait for 60 seconds between retries.
 
 ```typescript
     public waitForDNSResolve ( hostFqdn: string ): void {
@@ -43,7 +42,7 @@ Here, a function ￼`waitForDNSResolve()`￼ accepts a host FQDN as a string. Th
     }
 ```
 
-#### isValidIPv4()
+### isValidIPv4()
 
 Once the FQDN is resolved, we want to make sure that the return IP address is a valid IP. For that, we have a function `isValidIPv4()`, which accepts the IP as a string, tests it against a regular expression, and returns a boolean if the address is valid.
 
@@ -54,7 +53,7 @@ Once the FQDN is resolved, we want to make sure that the return IP address is a 
     }
 ```
 
-#### throwError()
+### throwError()
 
 If the result of `isValidIPv4()` is true, the main function `waitForDNSResolve()` will return. But if after 20 retries, the FQDN is still not resolved, we will throw an error with a simple function called `throwError()` .
 
@@ -64,7 +63,7 @@ If the result of `isValidIPv4()` is true, the main function `waitForDNSResolve()
     }
 ```
 
-#### The final code
+### The final code
 
 ```typescript
 export class SampleClass {
@@ -98,11 +97,11 @@ export class SampleClass {
 }
 ```
 
-### Unit Test
+## Unit Test
 
 Creating a unit test for a code is always a good idea. Let’s develop tests for our functions with Jasmine, which is built into the [vRBT](https://github.com/vmware/build-tools-for-vmware-aria). The code is pretty self-explanatory.
 
-#### Testing isValidIPv4()
+### Testing isValidIPv4()
 
 ```typescript
 describe( 'isValidIPv4', () => {
@@ -127,7 +126,7 @@ describe( 'isValidIPv4', () => {
 } );
 ```
 
-#### Testing waitForDNSResolve()
+### Testing waitForDNSResolve()
 
 ```typescript
 describe( 'waitForDNSResolve', () => {
@@ -169,7 +168,7 @@ describe( 'waitForDNSResolve', () => {
 } );
 ```
 
-#### The final code
+### The final code
 
 ```typescript
 import { SampleClass } from "./sample"
