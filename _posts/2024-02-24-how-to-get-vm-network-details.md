@@ -7,13 +7,14 @@ tags: [vmware, building_tools, typescript, aria_orchestrator, unit_test, jasmine
 
 Let's take a quick look at a simple one that returns the IP details of the VM running in VMware vCenter, using VSCode, Build Tools for VMware Aria, and Typescript project.
 
-## Create a class and a method
+## Create a Class and a method
 
 We'll create a sample class using one method to achieve this goal.
-First, our (method) is a part of the Network class, where we can create more methods in the same topic if needed.
+First, our function (method) is a part of the Network class, where we can create more methods in the same topic if needed.
 Secondly, VSCode shows us the type of the returned values, which helps us understand how to extract necessary values. For example, variable `vcGuestNicInfo` has type `vcGuestNicInfo`
 
-![img-description](/assets/img/vmware-how-to-get-VM-network-details/Pasted%20image%2020240224140910.png){: .shadow }
+![test](/assets/img/vmware-how-to-get-VM-network-details/Pasted%20image%2020240224140910.png){: .shadow }
+_VSCode_
 
 Code snippet:
 
@@ -85,6 +86,7 @@ describe('getNetworkDetails', () => {
 The result was successful.
 
 ![img-description](/assets/img/vmware-how-to-get-VM-network-details/Pasted%20image%2020240224141306.png){: .shadow }
+_VSCode_
 
 ## Transpiled result
 
