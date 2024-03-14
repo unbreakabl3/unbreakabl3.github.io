@@ -203,8 +203,6 @@ I decided not to post the unit tests here because they are mostly self-explanato
 I think the results of the tests should be enough. The tests themself can be found [here](https://github.com/unbreakabl3/vmware_aria_orchestrator_examples/blob/main/src/test/configElement.test.ts).
 ![img-description](/assets/img/vro-configuration-element-how-to/image%202.png){: .shadow }
 
-Therefore, here is the link to the source code. Any discussions are more than welcome.
-
 ## Source code
 
 The source code can be found [here](https://github.com/unbreakabl3/vmware_aria_orchestrator_examples.git)
