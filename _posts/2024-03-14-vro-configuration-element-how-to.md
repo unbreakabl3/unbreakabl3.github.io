@@ -66,47 +66,47 @@ Both of them should be strings, and we’ll use the values from the previously c
 
 1. `configName = power_settings`
 2. `configPath = my_path`
+
 First of all, we’re checking if they’re defined.
 
 ```typescript
-    if (!configName || !configPath) {
-      return undefined;
-    }
+if (!configName || !configPath) {
+  return undefined;
+}
 ```
 
 After that, we tried to fetch all elements using `Server.getConfigurationElementCategoryWithPath`, which returns an array of `ConfigurationElement`.
 
 ```typescript
-      const configurationElements: Array<ConfigurationElement> = Server.getConfigurationElementCategoryWithPath (configPath)?.allConfigurationElements;
-      if (!configurationElements) {
-        this.handleConfigError (configName, 'Configuration element category not found');
-      }
+const configurationElements: Array<ConfigurationElement> = Server.getConfigurationElementCategoryWithPath (configPath)?.allConfigurationElements;
+if (!configurationElements) {
+  this.handleConfigError (configName, 'Configuration element category not found');
+}
 ```
 
 If something was found, we tried to find our specific element using `findConfigurationElementByName` method. If it was found, the function returned this element.
 
 ```typescript
-  public getConfigElement({ configName, configPath }: { configName: string; configPath: string }): ConfigurationElement | undefined {
-    if (!configName || !configPath) {
-      return undefined;
-    }
-    try {
-      const configurationElements: Array<ConfigurationElement> = Server.getConfigurationElementCategoryWithPath (configPath)?.allConfigurationElements;
-      if (!configurationElements) {
-        this.handleConfigError (configName, 'Configuration element category not found');
-      }
-  
-      const configurationElement: ConfigurationElement | undefined = this.findConfigurationElementByName (configurationElements, configName);
-      if (!configurationElement) {
-        this.handleConfigError (configName, 'Configuration element not found');
-      }
-  
-      return configurationElement;
-    } catch (error) {
-      this.handleConfigError (configName, error);
-    }
+public getConfigElement({ configName, configPath }: { configName: string; configPath: string }): ConfigurationElement | undefined {
+  if (!configName || !configPath) {
+    return undefined;
   }
+  try {
+    const configurationElements: Array<ConfigurationElement> = Server.getConfigurationElementCategoryWithPath (configPath)?.allConfigurationElements;
+    if (!configurationElements) {
+      this.handleConfigError (configName, 'Configuration element category not found');
+    }
 
+    const configurationElement: ConfigurationElement | undefined = this.findConfigurationElementByName (configurationElements, configName);
+    if (!configurationElement) {
+      this.handleConfigError (configName, 'Configuration element not found');
+    }
+
+    return configurationElement;
+  } catch (error) {
+    this.handleConfigError (configName, error);
+  }
+}
 ```
 
 ### findConfigurationElementByName
@@ -114,10 +114,9 @@ If something was found, we tried to find our specific element using `findConfigu
 That is a straightforward function that receives an array of configuration elements and tries to find one matching the name.
 
 ```typescript
-  private findConfigurationElementByName ( elements: Array<ConfigurationElement>, name: string ): ConfigurationElement | undefined {
-    return elements.find ( ( element ) => element.name === name );
-  }
-
+private findConfigurationElementByName ( elements: Array<ConfigurationElement>, name: string ): ConfigurationElement | undefined {
+  return elements.find ( ( element ) => element.name === name );
+}
 ```
 
 ### getConfElementAttributes
@@ -141,19 +140,18 @@ type AttributeMap = {
 If the attributes are found, the function will validate them by running the `validateConfigElementAttributes` function, which returns them.
 
 ```typescript
-  public getConfElementAttributes ( elementName: ConfigurationElement ): AttributeMap | undefined {
-    const attributes: AttributeMap = {};
-    try {
-      attributes.powerMin = elementName.getAttributeWithKey ( "powerMin" )?.value;
-      attributes.powerMax = elementName.getAttributeWithKey ( "powerMax" )?.value;
-      attributes.domainName = elementName.getAttributeWithKey ( "domainName" )?.value;
-    } catch ( error ) {
-      throw new Error ( `Could not getAttributeWithKey() from element '${elementName}'. ${error}` );
-    }
-    
-    if ( this.validateConfigElementAttributes ( attributes ) ) return attributes
+public getConfElementAttributes ( elementName: ConfigurationElement ): AttributeMap | undefined {
+  const attributes: AttributeMap = {};
+  try {
+    attributes.powerMin = elementName.getAttributeWithKey ( "powerMin" )?.value;
+    attributes.powerMax = elementName.getAttributeWithKey ( "powerMax" )?.value;
+    attributes.domainName = elementName.getAttributeWithKey ( "domainName" )?.value;
+  } catch ( error ) {
+    throw new Error ( `Could not getAttributeWithKey() from element '${elementName}'. ${error}` );
   }
-
+  
+  if ( this.validateConfigElementAttributes ( attributes ) ) return attributes
+}
 ```
 
 ### validateConfigElementAttributes
@@ -162,21 +160,21 @@ To ensure we’re getting the proper values from the Configuration Element, we n
 The function is checking the type of each attribute. If it’s matching, the function returns the attributes.
 
 ```typescript
-  private validateConfigElementAttributes ( attrs: AttributeMap ): AttributeMap {
-    const areAttributesValid = ( attrs: AttributeMap ): boolean =>
-      attrs.powerMin !== undefined &&
-      typeof attrs.powerMin === "number" &&
-      attrs.powerMax !== undefined &&
-      typeof attrs.powerMax === "number" &&
-      attrs.domainName !== undefined &&
-      typeof attrs.domainName === "string";
-  
-    if ( areAttributesValid ( attrs ) ) {
-      return attrs;
-    } else {
-      throw new Error ( "One or more attributes are missing, null, or not a number (powerMin/powerMax) or string (domainName)" );
-    }
+private validateConfigElementAttributes ( attrs: AttributeMap ): AttributeMap {
+  const areAttributesValid = ( attrs: AttributeMap ): boolean =>
+    attrs.powerMin !== undefined &&
+    typeof attrs.powerMin === "number" &&
+    attrs.powerMax !== undefined &&
+    typeof attrs.powerMax === "number" &&
+    attrs.domainName !== undefined &&
+    typeof attrs.domainName === "string";
+
+  if ( areAttributesValid ( attrs ) ) {
+    return attrs;
+  } else {
+    throw new Error ( "One or more attributes are missing, null, or not a number (powerMin/powerMax) or string (domainName)" );
   }
+}
 ```
 
 ### handleConfigError
@@ -185,9 +183,9 @@ This is a straightforward error-handling function that implements ￼the `Invali
 We are using this method in each of the methods above to handle the exception.
 
 ```typescript
-  private handleConfigError ( configName: string, error: unknown ): never {
-    throw new InvalidConfigElementError ( `Could not find configuration element ${configName}. ${error}` );
-  }
+private handleConfigError ( configName: string, error: unknown ): never {
+  throw new InvalidConfigElementError ( `Could not find configuration element ${configName}. ${error}` );
+}
 ```
 
 ```typescript
