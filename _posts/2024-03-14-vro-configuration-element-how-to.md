@@ -207,4 +207,4 @@ Therefore, here is the link to the source code. Any discussions are more than we
 
 ## Source code
 
-The source code can be found [here](~https://github.com/unbreakabl3/vmware_aria_orchestrator_examples.git~)
+The source code can be found [here](https://github.com/unbreakabl3/vmware_aria_orchestrator_examples.git)
