@@ -92,7 +92,7 @@ The JKS keystore uses a proprietary format. It is recommended to migrate to PKCS
 
 - Generate a key to sign the toolchain. Replace the values with yours.
 
-> It's essential to note that the `emailAddress` should NOT be EMPTY. Otherwise, the vRO import will break with a '400 OK' error
+> It's essential to note that the `emailAddress` should NOT be empty. Otherwise, the vRO import will break with a '400 OK' error
 {: .prompt-info }
 
 ```shell
@@ -111,7 +111,7 @@ The JKS keystore uses a proprietary format. It is recommended to migrate to PKCS
 cd /path/archetype.keystore-2.0.0
 ```
 
-Generate a private key and export it .Replace with your values.
+Generate a private key and export it. Replace with your values.
 
 ```shell
 openssl genpkey -out private_key.pem -algorithm RSA
@@ -319,7 +319,7 @@ Copy the XML body below into `settings.xml` ans save the file.
                 <vro.auth>{basic}</vro.auth> <!-- If "basic" is selected here, ensure com.vmware.o11n.sso.basic-authentication.enabled=true System Property is set in vRO -->
                 <vro.authHost>{auth_host}</vro.authHost> <!-- Required for external vRO instances when vra auth is used -->
                 <vro.authPort>{auth_port}</vro.authPort> <!-- Required for external vRO instances when vra auth is used -->
-                <vro.refresh.token>{refresh_token}</vro.refresh.token> <!-- login with tokenwhen vra auth is used -->
+                <vro.refresh.token>{refresh_token}</vro.refresh.token> <!-- login with token when vra auth is used -->
                 <vro.proxy>http://proxy.host:80</vro.proxy>
                 <vro.tenant>{vro_tenant}</vro.tenant>
             </properties>
@@ -529,7 +529,7 @@ Follow the instructions provided in the [repository](https://github.com/vmware/v
 
 Open VSCode, go to Command Palette (CMD + SHIFT + P) and start typing `vRealize`. Select `vRealize: New Project`.
 ![img-description](92d76fbb-7de1-4e4c-a49e-8a12110202c0.png){: .shadow }{: .normal }
-Select the type of the project. Let's create a TypeScript Project
+Select the type of the project. Let's create a vRO TypeScript-based Project
 ![img-description](d1a91d8a-0bba-4001-b071-460083ad51a7.png){: .shadow }{: .normal }{: .normal }
 Provide a Project ID
 ![img-description](e67015a4-fef5-43ab-87da-41cc7c6fca49.png){: .shadow }{: .normal }
@@ -537,14 +537,9 @@ Provide a Project Name
 ![img-description](17c843bc-f1b7-497a-bd98-44058877fb4a.png){: .shadow }{: .normal }
 Save the project in some directory.
 
-> If the error will occur, it may happen because of the default version `DarchetypeVersion=2.12.5`. The solution is to run the same command in terminal and set the `DarchetypeVersion` to the relevant version.
+> If the error occurs, it may happen because of the default version `DarchetypeVersion=2.12.5`. The quick solution will be to change the default version in the vRealize Developer Tool setting in VSCode below to any relevant version that should be used.
 {: .prompt-tip }
-
-![img-description](5291acdb-d159-410b-bb73-dad38e3face3.png){: .shadow }{: width="400" height="300" }{: .normal }
-
-```shell
-mvn archetype:generate -DinteractiveMode=false -DarchetypeGroupId=com.vmware.pscoe.o11n.archetypes -DarchetypeArtifactId=package-typescript-archetype -DarchetypeVersion=2.37.0 -DgroupId=com.my.project -DartifactId=project01
-```
+![img-description](Screenshot 2024-03-27 at 15.11.54.png){: .shadow }{: width="400" height="300" }{: .normal }
 
 When everything was done properly, we should see the following in the VSCode
 ![img-description](ef7e0127-1200-4cc3-85d4-da84417bcd9e.png){: .shadow }{: width="500" height="400" }{: .normal }
@@ -553,6 +548,31 @@ When everything was done properly, we should see the following in the VSCode
 
 If `Basic` authentication is chosen, follow [this](https://docs.vmware.com/en/VMware-Aria-Automation/8.16/Installing-Configuring-Automation-Orchestrator/GUID-30026BCF-DC1F-471E-A63C-A29E85FBDD41.html) procedure. This is how it should look like at the end.
 ![img-description](1f69c989-5ce3-43ec-bbd2-22e070d78dae.png){: .shadow }{: width="500" height="400" }{: .normal }
+
+## UPDATE 1: Windows installation
+
+Thanks to [Mohammad Makeen AlDamouni](https://www.linkedin.com/in/mohammad-makeen/) for providing these tips.
+
+Windows based installation requires a few additional adjustments:
+
+> Make sure both Python and OpenSSL are added to the environment variables.
+{: .prompt-tip }
+
+1. Install OpenSSL (version: OpenSSL 3.1.3 19 Sep 2023 (Library: OpenSSL 3.1.3 19 Sep 2023) )
+2. Install Python (version: Python 3.8.0) - pip: 19.2.3
+
+    > The steps below are similar to those mentioned above for the Mac and can be referenced.
+    {: .prompt-info }
+
+3. Creation of the Keystore can be done using the [KeyStore Explorer](https://github.com/kaikramer/keystore-explorer).
+4. Extract private key from the keystore.
+5. Generate the certificate.
+6. Confirm that both the generated previously certificate and private key are valid.
+
+> Some of the `mvn clean install` commands can fail. The reason for that is the user who executed the command encountered a privilege restriction, which prevented the command from running successfully. To resolve this issue, one possible solution is to open the Command Prompt with administrative access by choosing the "Run as administrator" option.
+{: .prompt-tip }
+> It is possible to add `-X` to the `mvn` command to get the output at the `debug` level.
+{: .prompt-tip }
 
 ## Next step
 
