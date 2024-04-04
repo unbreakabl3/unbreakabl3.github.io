@@ -1,8 +1,8 @@
 ---
 layout: post
-title: How to retry the async function on vRO?
+title: How to retry the async function with vRO?
 date: "2024-03-18"
-categories: [VMware, Aria Orchestrator]
+categories: [VMware, Aria Orchestrator, How To, vRO]
 tags: [vmware, building_tools, typescript, aria_orchestrator, async_await]
 ---
 

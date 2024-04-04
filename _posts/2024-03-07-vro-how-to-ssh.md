@@ -2,7 +2,7 @@
 date: '2024-03-07 18:33:02 +0100'
 title: How to SSH to remote host from Aria Orchestrator
 date: 2024-02-29
-categories: [VMware, Aria Orchestrator]
+categories: [VMware, Aria Orchestrator, How To, vRO]
 tags: [vmware, building_tools, typescript, aria_orchestrator, unit_test, jasmine, ssh]
 ---
 

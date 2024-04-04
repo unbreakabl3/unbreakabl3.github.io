@@ -1,7 +1,7 @@
 ---
 title: VMware Aria Automation + Keycloak + LDAP
 date: 2024-02-22
-categories: [VMware, Keycloak, vIDM, vRA]
+categories: [VMware, Keycloak, vIDM, vRA, Aria Automation]
 tags: [vmware, vidm, keycloak, vra, aria_automation, vrealize_automation]
 ---
 

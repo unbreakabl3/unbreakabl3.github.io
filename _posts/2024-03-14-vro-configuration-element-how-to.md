@@ -2,7 +2,7 @@
 layout: post
 title: How to create a vRO Configuration Element?
 date: '2024-03-14'
-categories: [VMware, Aria Orchestrator]
+categories: [VMware, Aria Orchestrator, How To, vRO]
 tags: [vmware, building_tools, typescript, aria_orchestrator, unit_test, jasmine, configuration_element]
 ---
 ## Configuration Element on steroids

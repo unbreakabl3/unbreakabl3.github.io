@@ -1,7 +1,7 @@
 ---
 title: Build Tools for VMware Aria
 date: 2024-02-22
-categories: [VMware, Aria Orchestrator]
+categories: [VMware]
 tags: [vmware, building_tools, typescript, aria_orchestrator]
 ---
 

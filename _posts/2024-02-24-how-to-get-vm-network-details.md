@@ -1,7 +1,7 @@
 ---
 title: How to get VMware vCenter VM network details using Aria Orchestrator
 date: 2024-02-24
-categories: [VMware, Aria Orchestrator]
+categories: [VMware, Aria Orchestrator, How To, vRO]
 tags: [vmware, building_tools, typescript, aria_orchestrator, unit_test, jasmine]
 ---
 
