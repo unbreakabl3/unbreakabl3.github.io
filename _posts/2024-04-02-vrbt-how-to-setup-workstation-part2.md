@@ -31,17 +31,17 @@ Let's quickly review what we have in our project:
 * _workflows_ - holds _.wf.ts_ and _wf.form.json_, which will be converted to the Workflow
 * _pom.xml -_ includes all the necessary dependencies and defaults to build the package. This file can be adjusted accordingly to your needs.
 
-Creating a dedicated _test_ folder in _/src_ for test files may be a good idea. Unit tests are executed automatically each time we run `mvn clean install vrealize:push -P vro01` if at least one test file is located <u>anywhere</u> in the project.
+Creating a dedicated _test_ folder in _/src_ for test files may be a good idea. Unit tests are executed automatically each time we run `mvn clean install vrealize:push -Pvro01` if at least one test file is located <u>anywhere</u> in the project.
 
 > All the pre-defined files can be removed from your project. They are here just for an example.
 {: .prompt-info}
 
 ## First push
 
-Firstly, let's confirm our ability to communicate with vRO by creating a vRO package and pushing it to vRO..
+Firstly, let's confirm our ability to communicate with vRO by creating a vRO package and pushing it to vRO. More information can be found [here](https://github.com/vmware/build-tools-for-vmware-aria/tree/main/docs/archive/doc/markdown).
 
 ```shell
-mvn clean install vrealize:push -P vro01
+mvn clean install vrealize:push -Pvro01
 ```
 
 Maven will use the NodeJS we installed last time to convert the TS code into the JS code and build the vRO package.
@@ -54,10 +54,11 @@ Let's see what is happening:
   * _mvn_ will generate a package based on the _groupId_, _artifactId_ and version stored in _pom.xml_. In our case, the package's name will be _test.test-1.0.0-SNAPSHOT.package_. This is an encrypted container, which will be pushed to vRO and extracted there.
   
  ![project_folder_structure](26a5fc2f-93f9-4780-8c5c-e63eebc77a24.png){: .shadow }{: .normal }{: width="400" height="300" }
-> If, for some reason, _target_ or _node_modules_ should be kept, remove _clean_ from the command: `mvn install vrealize:push -P vro01`
+> If, for some reason, _target_ or _node_modules_ should be kept, remove _clean_ from the command: `mvn install vrealize:push -Pvro01`
 {: .prompt-tip}
 
-* _`vrealize:push -P vro01`_ - will push created package into vRO instance called _vro01_ (the same we configured in _settings.xml_ before)
+* _`vrealize:push -Pvro01`_ - will push created package into vRO instance called _vro01_ (the same we configured in _settings.xml_ before). **-P** stands for Profile.
+
 Maven will add a few supporting packages to the main package, like _com.vmware.pscoe.library.ecmascript-2.38.0_, which are includes all the magic code, that will help vRO "understand" the [ECMAScript 6](https://262.ecma-international.org/6.0/?_gl=1*pyfepb*_ga*MTgyNTg2MjM4Ni4xNzExOTk5Mjc0*_ga_TDCK4DWEPP*MTcxMTk5OTI3My4xLjAuMTcxMTk5OTI3My4wLjAuMA..) the features. [There are](https://www.w3schools.com/js/js_es6.asp) some of the features.
 At the end, we should see our package in vRO packages menu:
 
@@ -93,6 +94,8 @@ We can speed up our build a bit if we use more CPU cores. To do that, we need to
 ```shell
 mvn -T 1C
 ```
+
+> -T - thread count, for instance 4 (int) or 2C/2.5C (int/float) where C is core multiplied
 
 ## Summary
 
