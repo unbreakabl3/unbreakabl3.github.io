@@ -27,16 +27,19 @@ Let's quickly review what we have in our project:
   * _config_ - can hold _.ts_ or _.yaml_ files, which will be converted to the Configuration Elements
   * _resource_ - can hold _.txt, .json, .yaml, .xml_ files, which will be converted to the Resources
 * _policies_ - _.pl.ts_ files, which will be converted to the Policy
-* _types_ - _.ts_ files, which will hold the types/interfaces. Not mandatory, but recommended, to store types/interfaces in that folder. [Here](https://github.com/unbreakabl3/vmware_aria_orchestrator_examples/blob/main/src/types/types.d.ts) is an example.
+* _types_ - _.ts_ files, which will hold the types/interfaces. Not mandatory, but recommended, to store types/interfaces in that folder. [Here](https://github.com/unbreakabl3/vmware_aria_orchestrator_examples/blob/main/general_examples/src/types/types.d.ts) is an example.
 * _workflows_ - holds _.wf.ts_ and _wf.form.json_, which will be converted to the Workflow
 * _pom.xml -_ includes all the necessary dependencies and defaults to build the package. This file can be adjusted accordingly to your needs.
 
-Creating a dedicated _test_ folder in _/src_ for test files may be a good idea. Unit tests are executed automatically each time we run `mvn clean install vrealize:push -Pvro01` if at least one test file is located <u>anywhere</u> in the project.
+Creating a dedicated _test_ folder in _/src/test_ for test files is mandatory to compile and work properly. Unit tests are executed automatically each time we run `mvn clean install vrealize:push -Pvro01` if at least one test file is located <u>anywhere</u> in the project.
+
+> Workflow cannot be tested. This means less logic and more functions imported from action elements - better. Because actions can be tested.
+{: .prompt-tip}
+
+## First push
 
 > All the pre-defined files can be removed from your project. They are here just for an example.
 {: .prompt-info}
-
-## First push
 
 Firstly, let's confirm our ability to communicate with vRO by creating a vRO package and pushing it to vRO. More information can be found [here](https://github.com/vmware/build-tools-for-vmware-aria/tree/main/docs/archive/doc/markdown).
 
@@ -104,7 +107,7 @@ This is what my workflows were look like. Until now.
 
  ![workflow example](5972bd81-c14b-49ff-a96d-b4e5f504d940.png){: .shadow }{: .normal }{: width="400" height="300" }
 
-[Build Tools for VMware Aria](https://github.com/vmware/build-tools-for-vmware-aria) provides a different perspective, allowing us to approach tasks uniquely. We no longer need to create numerous scriptable tasks, each containing a small or large code snippet, linking one task's output to the next's input and so on. We no longer use canvas elements like Timer, Exception, Decision, or Counter elements. We can have only one scriptable task containing all our code, replacing all those elements. Additionally, all supporting functions can be (should be) written as Action Elements and imported within our primary scriptable task (see the example [here](https://github.com/unbreakabl3/vmware_aria_orchestrator_examples/blob/main/src/actions/waitForDNSResolve.ts)). This approach significantly improves code quality, making it much cleaner and more accessible to test. We can test our main code and all its Action Elements within the same project, ensuring it is far more stable.
+[Build Tools for VMware Aria](https://github.com/vmware/build-tools-for-vmware-aria) provides a different perspective, allowing us to approach tasks uniquely. We no longer need to create numerous scriptable tasks, each containing a small or large code snippet, linking one task's output to the next's input and so on. We no longer use canvas elements like Timer, Exception, Decision, or Counter elements. We can have only one scriptable task containing all our code, replacing all those elements. Additionally, all supporting functions can be (should be) written as Action Elements and imported within our primary scriptable task (see the example [here](https://github.com/unbreakabl3/vmware_aria_orchestrator_examples/blob/main/general_examples/src/actions/waitForDNSResolve.ts)). This approach significantly improves code quality, making it much cleaner and more accessible to test. We can test our main code and all its Action Elements within the same project, ensuring it is far more stable.
 
 That's how my Workflows are looks now :)
 

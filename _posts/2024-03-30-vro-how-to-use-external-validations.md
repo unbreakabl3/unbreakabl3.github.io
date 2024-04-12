@@ -102,4 +102,6 @@ Now let's run the same workflow, but in that time, we provide the name of the VM
 
 The external validation can significantly reduce the risk of errors, improve the quality of the user's experience, and ensure that the workflow's outcome meets the user's expectations.
 
-The source code can be found [here](https://github.com/unbreakabl3/vmware_aria_orchestrator_examples).
+## Source Code
+
+The source code can be found [here](https://github.com/unbreakabl3/vmware_aria_orchestrator_examples/blob/main/general_examples/src/actions/external_validation/validateVM.ts).
