@@ -98,6 +98,10 @@ Now let's run the same workflow, but in that time, we provide the name of the VM
 >
 > Despite my efforts, I could not find a way to do so. If you happen to find a solution, please feel free to share it in the comments section.
 
+### Update 1
+
+The problem regarding unit testing has been resolved and the solution can be accessed [here](https://github.com/unbreakabl3/vmware_aria_orchestrator_examples/blob/main/general_examples/src/test/validateVM.test.ts)
+
 ## Summary
 
 The external validation can significantly reduce the risk of errors, improve the quality of the user's experience, and ensure that the workflow's outcome meets the user's expectations.
