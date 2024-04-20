@@ -108,4 +108,4 @@ The external validation can significantly reduce the risk of errors, improve the
 
 ## Source Code
 
-The source code can be found [here](https://github.com/unbreakabl3/vmware_aria_orchestrator_examples/blob/main/general_examples/src/actions/external_validation/validateVM.ts).
+The source code with the unit tests can be found [here](https://github.com/unbreakabl3/vmware_aria_orchestrator_examples/blob/main/general_examples/src/actions/external_validation/validateVM.ts).
