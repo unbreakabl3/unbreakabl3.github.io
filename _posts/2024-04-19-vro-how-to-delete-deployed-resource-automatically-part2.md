@@ -74,7 +74,7 @@ We need to create a simple function that takes a date from the user and compares
  */
 (function validateDecommissionDate(providedDate: Date) {
   const dateTime = new Date();
-  if (providedDate <= dateTime) {
+  if (providedDate && providedDate <= dateTime) {
     return `Provided decommission date cannot be in the past`;
   }
 });
