@@ -46,3 +46,5 @@ If we put some value in the input1, input2 disappears.
 ![Image](36effbe0-5be5-4073-a133-2767557e11b8.png){: .shadow }{: .normal }
 
 ## Summary
+
+Today, we demonstrated the flexibility of vRO with a bit of creativity.
