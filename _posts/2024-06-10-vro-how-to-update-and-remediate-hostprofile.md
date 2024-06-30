@@ -86,13 +86,13 @@ hostToConfigSpecMap.push(vcHostProfileManagerHostToConfigSpecMap);
 
 ### Update host with provided values
 
-To do so, we have _updateHostCustomization_ function.
+To do so, we have `updateHostCustomization` method.
 
 ```typescript
 func.updateHostCustomization(hostToConfigSpecMap, hostProfileManager);
 ```
 
-The function takes a previously prepared variables and execute `updateHostCustomizations_Task()` method.
+The method takes a previously prepared variables and execute `updateHostCustomizations_Task()` method.
 
 ```typescript
 public updateHostCustomization(hostToConfigSpecMap: Array<any>, hostProfileManager: VcProfileManager) {
