@@ -2,7 +2,7 @@
 layout: post
 title: How to use external validations with VMware Aria Orchestrator
 date: '2024-03-30'
-img_path: /assets/img/vro-how-to-use-external-validations/
+media_subpath: /assets/img/vro-how-to-use-external-validations/
 categories: [VMware, Build Tools, Aria Orchestrator, How To, vRO]
 tags: [vmware, building_tools, external_validation]
 ---

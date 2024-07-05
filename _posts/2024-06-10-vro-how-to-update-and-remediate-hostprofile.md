@@ -2,7 +2,7 @@
 layout: post
 title: How to update and remediate hostprofile
 date: "2024-06-10"
-img_path: /assets/img/vro-how-to-update-and-remediate-hostprofile/
+media_subpath: /assets/img/vro-how-to-update-and-remediate-hostprofile/
 categories: [VMware, Build Tools, Aria Orchestrator, How To, vRO]
 tags: [vmware, building_tools, hostprofile]
 ---

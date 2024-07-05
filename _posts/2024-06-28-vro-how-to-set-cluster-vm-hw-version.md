@@ -2,7 +2,7 @@
 layout: post
 title: How to set default and maximum VM's hardware version on the cluster level
 date: "2024-06-28 12:57:08 +0200"
-img_path: /assets/img/vro-how-to-set-cluster-vm-hw-version/
+media_subpath: /assets/img/vro-how-to-set-cluster-vm-hw-version/
 categories: [VMware, Build Tools, Aria Orchestrator, How To, vRO]
 tags: [vmware, building_tools, vm_hw_version, resource_element, configuration_element, external_validation]
 ---

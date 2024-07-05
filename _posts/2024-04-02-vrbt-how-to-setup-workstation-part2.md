@@ -2,7 +2,7 @@
 layout: post
 title: How to setup the workstation for Build Tools for VMware Aria - part 2
 date: '2024-04-02 '
-img_path: /assets/img/vrbt-how-to-setup-workstation-part2/
+media_subpath: /assets/img/vrbt-how-to-setup-workstation-part2/
 categories: [VMware, Build Tools, Aria Orchestrator, How To, vRO]
 tags: [vmware, building_tools]
 ---
