@@ -2,7 +2,7 @@
 layout: post
 title: Advanced techniques for masking inputs in vRO custom forms.
 date: "2024-05-10"
-img_path: /assets/img/vro-how-to-hide-inputs-in-customforms/
+media_subpath: /assets/img/vro-how-to-hide-inputs-in-customforms/
 categories: [VMware, Build Tools, Aria Orchestrator, How To, vRO]
 tags: [vmware, vro, tricks, how-to]
 ---

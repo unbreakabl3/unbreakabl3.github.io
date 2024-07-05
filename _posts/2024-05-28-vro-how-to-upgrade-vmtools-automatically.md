@@ -2,7 +2,7 @@
 layout: post
 title: How to upgrade vmtools automatically
 date: "2024-05-28"
-img_path: /assets/img/vro-how-to-upgrade-vmtools-automatically/
+media_subpath: /assets/img/vro-how-to-upgrade-vmtools-automatically/
 categories: [VMware, Build Tools, Aria Orchestrator, How To, vRO]
 tags: [vmware, building_tools, vmtools]
 ---

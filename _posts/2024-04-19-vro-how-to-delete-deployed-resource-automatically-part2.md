@@ -2,7 +2,7 @@
 layout: post
 title: How to delete deployed resource automatically with VMware Aria Orchestrator - part 2
 date: "2024-04-19"
-img_path: /assets/img/vro-how-to-delete-deployed-resource-automatically-part2/
+media_subpath: /assets/img/vro-how-to-delete-deployed-resource-automatically-part2/
 categories: [VMware, Build Tools, Aria Orchestrator, How To, vRO]
 tags: [vmware, building_tools]
 ---
