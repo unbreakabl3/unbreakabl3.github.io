@@ -286,7 +286,7 @@ We can see our cluster default setting is updated
 
 To enhance our method further, we could incorporate logic to selectively display only newer versions than a specified default version. This approach introduces a level of refinement by filtering out versions that do not meet the criteria, ensuring users only see relevant updates. While the possibilities for enhancement are boundless, adopting this strategy would establish a strong foundation.
 
-Any feedbacks are highly appreciated 😉
+Any feedback is highly appreciated.
 
 ## Source Code
 

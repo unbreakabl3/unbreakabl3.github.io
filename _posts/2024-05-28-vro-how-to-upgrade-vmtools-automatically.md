@@ -232,7 +232,7 @@ In the article, we covered the wide-ranging use case of upgrading vmtools. We ai
 
 ## Next step
 
-In the next part, we'll add more functionality and allow the VM Hardware upgrade as well. 
+In the next part, we'll add more functionality and allow the VM Hardware upgrade as well.
 
 ## Source Code
 

@@ -270,7 +270,7 @@ After all the mistakes were fixed, the workflows should run as expected and be c
 
 Today, we tried to automate the ESXi host profile remediation by developing a self-service form, which can be safely delegated to the team members. In addition, we are trying to cover our code base with some unit tests to make it as safe and stable as possible.
 
-Any feedbacks are highly appreciated 😉
+Any feedback is highly appreciated.
 
 ## Source Code
 
