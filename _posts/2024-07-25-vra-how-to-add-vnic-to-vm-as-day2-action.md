@@ -1,13 +1,13 @@
 ---
 layout: post
-title: Dependency Injection pattern in vRO or how to add vNIC to VM in vRA as a custom day two action
+title: Dependency Injection pattern in vRO or how to add vNIC to VM in vRA as a custom day 2 action
 date: "2024-07-25"
 media_subpath: /assets/img/vra-how-to-add-vnic-to-vm-as-day2-action/
 categories: [VMware, Build Tools, Aria Orchestrator, Aria Automation, How To]
 tags: [vmware, building_tools, day_2, custom_resources]
 ---
 
-Today, we're going to implement a day-two action for vRA deployment. Custom day two actions are a great feature of vRA. They allow us to add almost anything. We will use this feature to add and connect a new vNIC to the deployed VM. We will support both Standard and Distributed switches and all available types of vNICs. Additionally, we'll use <u>native JavaScript</u>, but we'll employ more advanced techniques to make our code more professional. To do this, we'll create a networking class that covers all the network parts.
+Today, we're going to implement a day 2  action for vRA deployment. Custom day 2 actions are a great feature of vRA. They allow us to add almost anything. We will use this feature to add and connect a new vNIC to the deployed VM. We will support both Standard and Distributed switches and all available types of vNICs. Additionally, we'll use <u>native JavaScript</u>, but we'll employ more advanced techniques to make our code more professional. To do this, we'll create a networking class that covers all the network parts.
 The idea is to create a workflow that will be triggered by the deployment and will call the action element, which will take care of creating and configuring a new network card.
 
 To the VSCode.
@@ -29,7 +29,7 @@ Let’s create a new action element called `virtualNetworkManagement` and a new 
 
 1. **createVirtualDeviceConfigSpec** - generate a new config spec for a new device (NIC). The operation will be ADD, so we want to add a NIC.
 2. **createVirtualDeviceConnectInfo** - defines the connectivity properties of the NIC. All arguments in that method are booleans.
-3. **createVirtualEthernetAdapter** - defines the type of the NIC. adapterType is a string that will be passed from the custom form selected by the user.
+3. **createVirtualEthernetAdapter** - defines the type of the NIC. `adapterType` is a string that will be passed from the custom form selected by the user.
 
 ```javascript
 var VirtualNetworkManagement = /** @class */ (function () {
