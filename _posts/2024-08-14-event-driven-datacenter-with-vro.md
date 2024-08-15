@@ -8,7 +8,7 @@ tags: [vmware, building_tools, policy]
 ---
 
 I like the concept of the Self-Healing, Event-Driven datacenter. The fundamental principle involves automatically responding to predefined events. For instance, suppose we have a logging system (the specific implementation is inconsequential) capable of detecting a predefined issue and initiating an HTTP POST request to an external system. The external remediation system will receive this HTTP call and subsequently take appropriate action. By adhering to this straightforward logic, we can automate a wide range of tasks.
-Numerous excellent tools are available that can assist us in achieving this objective. However, let us explore how we can implement this concept using VMware Aria Orchestrator and enhance its reliability and scalability.
+Numerous excellent tools are available to help us achieve this objective. However, many of them are tied to a specific piece of software or vendor. What if we wanted to create a general solution that can cover various use cases? Let’s explore how we can implement this concept using VMware Aria Orchestrator and improve its reliability and scalability.
 
 **The goals:**
 
