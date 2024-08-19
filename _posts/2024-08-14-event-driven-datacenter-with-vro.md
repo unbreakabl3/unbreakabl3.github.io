@@ -17,7 +17,7 @@ Numerous excellent tools are available to help us achieve this objective. Howeve
 - Seamlessly handle a multitude of events simultaneously.
 - Empower our workflows with code-driven remediation capabilities.
 
-To reach our goals, we will need to enhance our infrastructure with additional components, including webhook servers capable of receiving HTTP requests and passing it to the message queue. The purpose of the message queue is straightforward: with potentially dozens or even hundreds of alerts co-occurring, we want to ensure that all are noticed.
+To reach our goals, we will need to enhance our infrastructure with additional components, including webhook servers capable of receiving HTTP requests and passing it to the message queue. The purpose of the message queue is straightforward: with potentially dozens or even hundreds of alerts co-occurring, we want to ensure that all are noticed. This brings us to the opportunity to leverage a vRO feature called AMQP Policy.
 
 **The use case:**
 
