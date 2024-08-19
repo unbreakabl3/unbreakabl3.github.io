@@ -174,4 +174,4 @@ Any feedback is highly appreciated.
 
 The source code with the unit tests can be found [here](https://github.com/unbreakabl3/vmware_aria_orchestrator_examples/tree/main/policy_management/src) and [here](https://github.com/unbreakabl3/vmware_aria_orchestrator_examples/blob/main/general_examples/src/actions/virtualNetworkManagement.ts).
 
-The vRO packages are also available [here](https://github.com/unbreakabl3/vmware_aria_orchestrator_examples/blob/main/policy_managementcom.clouddepth.policy_management-1.0.6.package) and [here](https://github.com/unbreakabl3/vmware_aria_orchestrator_examples/blob/main/general_examples/com.examples.vmware_aria_orchestrator_examples-1.0.21.package).
+The vRO packages are also available [here](https://github.com/unbreakabl3/vmware_aria_orchestrator_examples/blob/main/policy_management/com.clouddepth.policy_management-1.0.6.package) and [here](https://github.com/unbreakabl3/vmware_aria_orchestrator_examples/blob/main/general_examples/com.examples.vmware_aria_orchestrator_examples-1.0.21.package).
