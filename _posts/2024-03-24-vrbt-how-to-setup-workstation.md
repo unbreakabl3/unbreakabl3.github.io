@@ -21,7 +21,7 @@ More documentation can be found [here](https://github.com/vmware/build-tools-for
 ### Install Maven
 
 > For now, only Maven 3.8.x is supported. 3.9.x is working well. But not higher.
-{: .prompt-info }
+> {: .prompt-info }
 
 ```shell
 brew install maven
@@ -50,7 +50,7 @@ source .zshrc
 ### Download and install [NodeJS](https://nodejs.org/dist/v16.15.1/node-v16.15.1.pkg)
 
 > For now, only NodeJS 14.x is supported. 16.x is working well. But not higher.
-{: .prompt-info }
+> {: .prompt-info }
 
 ### Create a Keystore for vRO package signing
 
@@ -64,7 +64,7 @@ cd archetype.keystore-2.0.0
 - Generate a new keystore. Replace with your values.
 
 > Java keystore used for signing packages build time. All API calls from the toolchain (i.e. the client) verify the SSL certificate returned by vRO/vRA (i.e. the server). If you are using self-signed or third-party signed certificates, you may need to add those certificates or their CA certificates to the default JAVA keystore, i.e. `JAVA_HOME/lib/security/cacerts`. **This is the recommended approach.**
-{: .prompt-info }
+> {: .prompt-info }
 
 ```shell
 keytool -keystore archetype.keystore -genkey -alias dunesrsa_alias -storepass 'XXXXXX' -keyalg RSA
@@ -93,7 +93,7 @@ The JKS keystore uses a proprietary format. It is recommended to migrate to PKCS
 - Generate a key to sign the toolchain. Replace the values with yours.
 
 > It's essential to note that the `emailAddress` should NOT be empty. Otherwise, the vRO import will break with a '400 OK' error
-{: .prompt-info }
+> {: .prompt-info }
 
 ```shell
 keytool -genkey -keyalg RSA -keysize 2048 -alias dunesrsa_alias -keystore archetype.keystore -storepass 'XXXXX' -validity 3650 -dname "CN=Project,OU=Department,O=Company,L=City,ST=State,C=XX,emailAddress=XXX"
@@ -144,7 +144,7 @@ openssl req -x509 -days 999 -key private_key.pem -in csr.csr -out cert.pem
 ```
 
 > Make sure that `archetype.keystore-2.0.0` directory contains those three files
-{: .prompt-info }
+> {: .prompt-info }
 
 ![img-description](dfbfdbaa-104c-4c70-9318-ba7c79516013.png){: .shadow }{: width="300" height="200" }{: .normal }
 
@@ -176,7 +176,7 @@ Now, the `~/.m2/keystore/` should contain the following:
 ### Create settings-security.xml
 
 > All the encrypted passwords will be used later in the `settings.xml`. Maven password encryption details can be found [here](https://maven.apache.org/guides/mini/guide-encryption.html).
-{: .prompt-info }
+> {: .prompt-info }
 
 ```shell
 cd ~/.m2
@@ -210,7 +210,7 @@ Copy password into the `settings-security.xml` and save.
 Encrypt <u>user's</u> password and <u>keystore's</u> password.
 
 > Using this method, Maven will handle the escape of all special characters. There is no longer a need to provide the password as part of the command.
-{: .prompt-tip }
+> {: .prompt-tip }
 > Example:
 
 ```shell
@@ -347,7 +347,7 @@ Copy the XML body below into `settings.xml` ans save the file.
 ```
 
 > If I encrypt the `vroKeyPass` with `mvn --encrypt-password` the project building will fail in the later stage. I didn't find a way to make it work. The `vroKeyPass` should remain a clear-text password.
-{: .prompt-warning }
+> {: .prompt-warning }
 
 - `vrealize.ssl.ignore` can be changed from `false` to `true` if needed. Of course, it is not recommended in the production environment
 - `vroKeyPass` is a password used when we created a Private Key
@@ -538,8 +538,8 @@ Provide a Project Name
 Save the project in some directory.
 
 > If the error occurs, it may happen because of the default version `DarchetypeVersion=2.12.5`. The quick solution will be to change the default version in the vRealize Developer Tool setting in VSCode below to any relevant version that should be used.
-{: .prompt-tip }
-![img-description](Screenshot 2024-03-27 at 15.11.54.png){: .shadow }{: width="400" height="300" }{: .normal }
+> {: .prompt-tip }
+> ![img-description](Screenshot 2024-03-27 at 15.11.54.png){: .shadow }{: width="400" height="300" }{: .normal }
 
 When everything was done properly, we should see the following in the VSCode
 ![img-description](ef7e0127-1200-4cc3-85d4-da84417bcd9e.png){: .shadow }{: width="500" height="400" }{: .normal }
@@ -556,13 +556,13 @@ Thanks to [Mohammad Makeen AlDamouni](https://www.linkedin.com/in/mohammad-makee
 Windows based installation requires a few additional adjustments:
 
 > Make sure both Python and OpenSSL are added to the environment variables.
-{: .prompt-tip }
+> {: .prompt-tip }
 
 1. Install OpenSSL (version: OpenSSL 3.1.3 19 Sep 2023 (Library: OpenSSL 3.1.3 19 Sep 2023) )
 2. Install Python (version: Python 3.8.0) - pip: 19.2.3
 
-    > The steps below are similar to those mentioned above for the Mac and can be referenced.
-    {: .prompt-info }
+   > The steps below are similar to those mentioned above for the Mac and can be referenced.
+   > {: .prompt-info }
 
 3. Creation of the Keystore can be done using the [KeyStore Explorer](https://github.com/kaikramer/keystore-explorer).
 4. Extract private key from the keystore.
@@ -570,9 +570,13 @@ Windows based installation requires a few additional adjustments:
 6. Confirm that both the generated previously certificate and private key are valid.
 
 > Some of the `mvn clean install` commands can fail. The reason for that is the user who executed the command encountered a privilege restriction, which prevented the command from running successfully. To resolve this issue, one possible solution is to open the Command Prompt with administrative access by choosing the "Run as administrator" option.
-{: .prompt-tip }
+> {: .prompt-tip }
 > It is possible to add `-X` to the `mvn` command to get the output at the `debug` level.
-{: .prompt-tip }
+> {: .prompt-tip }
+
+## UPDATE 2: OpenJDK
+
+Since vRBT 2.42.0 OpenJDK@21 is supported.
 
 ## Next step
 
