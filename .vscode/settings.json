@@ -1,3 +1,6 @@
 {
-  "cSpell.words": ["clouddepth", "datacenter", "Keycloak", "Scriptable"]
+  "cSpell.words": ["clouddepth", "datacenter", "Keycloak", "Scriptable"],
+  "editor.formatOnSave": false,
+  "editor.formatOnPaste": false,
+  "editor.formatOnType": false
 }

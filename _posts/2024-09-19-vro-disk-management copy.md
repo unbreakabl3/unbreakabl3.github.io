@@ -9,7 +9,7 @@ tags: [vmware, building_tools, disk_management]
 
 Disk management in vCenter is a straightforward process. However, what if we want to create a new disk using a code? What if we want to specify a storage controller to which we want to attach the disk? What if we want to ensure that the storage controller has a free slot to attach a new disk? Today, we will attempt to accomplish these tasks. While the relatively simple task may seem straightforward, it will turn out to be slightly more challenging than it initially appears.
 
-General goals:
+## General goals
 
 - Show the user all necessary details.
 - Support for all available storage controllers.
@@ -23,7 +23,7 @@ vRBT goals:
 
 To achieve our objectives, we’ll need to gather some specific details based on the provided user information and collect data directly from the virtual machine.
 
-The use case:
+A use case:
 
 We aim to create and attach a new disk with a custom size to one of the available storage controllers within the virtual machine:
 
@@ -431,7 +431,7 @@ Surprisingly, attaching a disk to a virtual machine can be a challenging task. F
 
 The source code with the unit tests can be found [here](https://github.com/unbreakabl3/vmware_aria_orchestrator_examples/tree/main/disk_management/src)
 
-The vRO package are also available [here](https://github.com/unbreakabl3/vmware_aria_orchestrator_examples/blob/main/disk_management/com.clouddepth.disk_management-1.0.97.package)  and the external ECMASCRIPT package [here](https://github.com/unbreakabl3/vmware_aria_orchestrator_examples/blob/main/disk_management/com.vmware.pscoe.library.ecmascript-2.41.0.package).
+The vRO packages are also available [here](https://github.com/unbreakabl3/vmware_aria_orchestrator_examples/blob/main/disk_management/com.clouddepth.disk_management-1.0.97.package)  and the external ECMASCRIPT package [here](https://github.com/unbreakabl3/vmware_aria_orchestrator_examples/blob/main/disk_management/com.vmware.pscoe.library.ecmascript-2.41.0.package).
 
 > Both packages should be imported
 {: .prompt-info}
