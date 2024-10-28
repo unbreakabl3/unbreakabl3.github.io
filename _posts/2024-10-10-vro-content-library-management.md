@@ -56,7 +56,6 @@ Let's create a basic function named `getAllVapiEndpoints.js`.
 The function will attempt to locate all instances of `Server.findAllByType` all the objects of type `VAPI Endpoint`. If we find their names, let's return them. We want to show only their names in the custom form dropdown menu, but not the whole object, since objects can't be shown there.
 
 ```javascript
- */
 /**
  * @returns {Array/string} - Array of all VAPI endpoints
  */
@@ -82,9 +81,9 @@ This approach will facilitate code cleanliness, enhanced readability, and testab
 
 So, what we have here:
 
-1. Validated provided inputs
-2. Find an API endpoint object based on the provided name
-3. Find content library objects
+1. Validated provided inputs.
+2. Find an API endpoint object based on the provided name.
+3. Find content library objects.
 4. Get content library names from the objects.
 
 We must implement all of these features to display the dropdown list of all libraries in the custom form. This will significantly enhance the user experience, as it will be much easier for users to locate the required content.
@@ -312,9 +311,9 @@ As we can observe, the content library is a highly versatile and powerful tool. 
 
 ## Source Code
 
-The source code can be found [here](https://github.com/unbreakabl3/vmware_aria_orchestrator_examples/tree/main/content_library_management)
+The source code can be found [here](https://github.com/unbreakabl3/vmware_aria_orchestrator_examples/tree/main/content_library_management).
 
-The vRO packages are also available [here](https://github.com/unbreakabl3/vmware_aria_orchestrator_examples/raw/refs/heads/main/content_library_management/com.clouddepth.content_library_management-1.0.40.package)  and the external ECMASCRIPT package [here](https://github.com/unbreakabl3/vmware_aria_orchestrator_examples/raw/refs/heads/main/content_library_management/com.vmware.pscoe.library.ecmascript-2.41.0.package).
+The vRO package is also available [here](https://github.com/unbreakabl3/vmware_aria_orchestrator_examples/raw/refs/heads/main/content_library_management/com.clouddepth.content_library_management-1.0.40.package) and the external ECMASCRIPT package [here](https://github.com/unbreakabl3/vmware_aria_orchestrator_examples/raw/refs/heads/main/content_library_management/com.vmware.pscoe.library.ecmascript-2.43.0.package).
 
-> Both packages should be imported
+> All packages should be imported
 {: .prompt-info}

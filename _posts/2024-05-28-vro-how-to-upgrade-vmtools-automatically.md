@@ -236,4 +236,9 @@ In the next part, we'll add more functionality and allow the VM Hardware upgrade
 
 ## Source Code
 
-The source code with the unit tests can be found [here](https://github.com/unbreakabl3/vmware_aria_orchestrator_examples/tree/main/upgrade_vm_tools)
+The source code with the unit tests can be found [here](https://github.com/unbreakabl3/vmware_aria_orchestrator_examples/tree/main/upgrade_vm_tools).
+
+The vRO package is also available [here](https://github.com/unbreakabl3/vmware_aria_orchestrator_examples/raw/refs/heads/main/upgrade_vm_tools/com.clouddepth.upgrade_vm_tools-1.0.81.package) and the external ECMASCRIPT package [here](https://github.com/unbreakabl3/vmware_aria_orchestrator_examples/raw/refs/heads/main/upgrade_vm_tools/com.vmware.pscoe.library.ecmascript-2.43.0.package).
+
+> All packages should be imported
+{: .prompt-info}

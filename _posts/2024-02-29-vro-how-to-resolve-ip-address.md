@@ -170,4 +170,7 @@ describe( 'waitForDNSResolve', () => {
 
 ## Source code
 
-The source code can be found [here](https://github.com/unbreakabl3/vmware_aria_orchestrator_examples/tree/main/general_examples)
+The source code can be found [here](https://github.com/unbreakabl3/vmware_aria_orchestrator_examples/tree/main/general_examples) and the external ECMASCRIPT package [here](https://github.com/unbreakabl3/vmware_aria_orchestrator_examples/blob/main/disk_management/com.vmware.pscoe.library.ecmascript-2.43.0.package).
+
+> All packages should be imported
+{: .prompt-info}

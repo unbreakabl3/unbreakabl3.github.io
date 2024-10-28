@@ -205,4 +205,9 @@ In part two, we will talk about the Custom Form - how to make it more beautiful 
 
 ## Source Code
 
-The source code with the unit tests can be found [here](https://github.com/unbreakabl3/vmware_aria_orchestrator_examples/tree/main/poc_example)
+The source code with the unit tests can be found [here](https://github.com/unbreakabl3/vmware_aria_orchestrator_examples/tree/main/poc_example).
+
+The vRO package is also available [here](https://github.com/unbreakabl3/vmware_aria_orchestrator_examples/raw/refs/heads/main/poc_example/com.clouddepth.poc_example-1.0.9.package) and the external ECMASCRIPT package [here](https://github.com/unbreakabl3/vmware_aria_orchestrator_examples/raw/refs/heads/main/poc_example/com.vmware.pscoe.library.ecmascript-2.43.0.package).
+
+> All packages should be imported
+{: .prompt-info}

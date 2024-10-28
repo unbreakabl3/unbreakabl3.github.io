@@ -251,4 +251,7 @@ Any feedback is highly appreciated.
 
 The source code with the unit tests can be found [here](https://github.com/unbreakabl3/vmware_aria_orchestrator_examples/tree/main/add_new_nic_to_vm/src) and [here](https://github.com/unbreakabl3/vmware_aria_orchestrator_examples/blob/main/general_examples/src/actions/virtualNetworkManagement.ts).
 
-The vRO packages are also available [here](https://github.com/unbreakabl3/vmware_aria_orchestrator_examples/blob/main/add_new_nic_to_vm/com.clouddepth.add_new_nic_to_vm-1.0.14.package) and [here](https://github.com/unbreakabl3/vmware_aria_orchestrator_examples/blob/main/general_examples/com.examples.vmware_aria_orchestrator_examples-1.0.20.package).
+The vRO package is also available [here](https://github.com/unbreakabl3/vmware_aria_orchestrator_examples/raw/refs/heads/main/add_new_nic_to_vm/com.clouddepth.add_new_nic_to_vm-1.0.14.package) and the external ECMASCRIPT package [here](https://github.com/unbreakabl3/vmware_aria_orchestrator_examples/raw/refs/heads/main/add_new_nic_to_vm/com.vmware.pscoe.library.ecmascript-2.43.0.package).
+
+> All packages should be imported
+{: .prompt-info}

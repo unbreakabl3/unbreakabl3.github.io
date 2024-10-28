@@ -429,9 +429,9 @@ Surprisingly, attaching a disk to a virtual machine can be a challenging task. F
 
 ## Source Code
 
-The source code with the unit tests can be found [here](https://github.com/unbreakabl3/vmware_aria_orchestrator_examples/tree/main/disk_management/src)
+The source code with the unit tests can be found [here](https://github.com/unbreakabl3/vmware_aria_orchestrator_examples/tree/main/disk_management/src).
 
-The vRO packages are also available [here](https://github.com/unbreakabl3/vmware_aria_orchestrator_examples/blob/main/disk_management/com.clouddepth.disk_management-1.0.97.package)  and the external ECMASCRIPT package [here](https://github.com/unbreakabl3/vmware_aria_orchestrator_examples/blob/main/disk_management/com.vmware.pscoe.library.ecmascript-2.41.0.package).
+The vRO package is available [here](https://github.com/unbreakabl3/vmware_aria_orchestrator_examples/raw/refs/heads/main/disk_management/com.clouddepth.disk_management-1.0.136.package) and the external ECMASCRIPT package [here](https://github.com/unbreakabl3/vmware_aria_orchestrator_examples/raw/refs/heads/main/disk_management/com.vmware.pscoe.library.ecmascript-2.43.0.package).
 
-> Both packages should be imported
+> All packages should be imported
 {: .prompt-info}

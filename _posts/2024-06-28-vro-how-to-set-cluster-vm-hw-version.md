@@ -290,4 +290,9 @@ Any feedback is highly appreciated.
 
 ## Source Code
 
-The source code with the unit tests can be found [here](https://github.com/unbreakabl3/vmware_aria_orchestrator_examples/tree/main/set_vm_hw_version)
+The source code with the unit tests can be found [here](https://github.com/unbreakabl3/vmware_aria_orchestrator_examples/tree/main/set_vm_hw_version).
+
+The vRO package is also available [here](https://github.com/unbreakabl3/vmware_aria_orchestrator_examples/raw/refs/heads/main/set_vm_hw_version/pom.xml/com.clouddepth.set_vm_hw_version-1.0.39.package) and the external ECMASCRIPT package [here](https://github.com/unbreakabl3/vmware_aria_orchestrator_examples/raw/refs/heads/main/set_vm_hw_version/pom.xml/com.vmware.pscoe.library.ecmascript-2.43.0.package).
+
+> All packages should be imported
+{: .prompt-info}

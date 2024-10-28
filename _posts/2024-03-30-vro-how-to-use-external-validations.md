@@ -109,3 +109,8 @@ The external validation can significantly reduce the risk of errors, improve the
 ## Source Code
 
 The source code with the unit tests can be found [here](https://github.com/unbreakabl3/vmware_aria_orchestrator_examples/blob/main/general_examples/src/actions/external_validation/validateVM.ts).
+
+The vRO package is also available [here](https://github.com/unbreakabl3/vmware_aria_orchestrator_examples/raw/refs/heads/main/general_examples/com.examples.vmware_aria_orchestrator_examples-1.0.25.package) and the external ECMASCRIPT package [here](https://github.com/unbreakabl3/vmware_aria_orchestrator_examples/blob/main/disk_management/com.vmware.pscoe.library.ecmascript-2.43.0.package).
+
+> All packages should be imported
+{: .prompt-info}
