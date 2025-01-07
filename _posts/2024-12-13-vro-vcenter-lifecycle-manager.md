@@ -7,7 +7,7 @@ categories: [VMware, Build Tools, Aria Orchestrator, How To]
 tags: [vmware, building_tools, lifecycle_manager, vcenter]
 ---
 
-Understanding how vCenter and Aria Orchestrator APIs work can provide valuable insights into the inner workings of these tools. In this blog post, we’ll explore how to use vRO to set a desired ESXi image version for a cluster. This hands-on approach not only simplifies cluster management but also highlights the power of automation in VMware environments. Let’s dive into the steps to streamline your ESXi cluster updates with vRO.
+Understanding how vCenter and Aria Orchestrator APIs work can provide valuable insights into the inner workings of these tools. In this blog post, we'll explore how to use vRO to set a desired ESXi image version for a cluster. This hands-on approach not only simplifies cluster management but also highlights the power of automation in VMware environments. Let’s dive into the steps to streamline your ESXi cluster updates with vRO.
 
 General goals:
 
