@@ -16,6 +16,9 @@ In this article, we’ll explore what Form Actions bring to the table, how they 
 ![image](image.png){: .shadow }{: .normal }
 _vRA custom form actions example_
 
+> More about validatable and non-validatable action inputs [here](https://techdocs.broadcom.com/us/en/vmware-cis/private-ai/foundation-with-nvidia/5-2/service-broker-custom-forms-learn-more-about-service-broker-custom-forms.html#:~:text=actions%20used%20in%20custom%20forms%20might%20contain%20inputs%20that%20can't%20be%20validated%20when%20the%20form%20is%20called%20using%20the%20API.%20When%20you%20save%20a%20form%20which%20contains%20unvalidatable%20actions%2C%20a%20warning%20appears.%20To%20save%20the%20form%2C%20you%20must%20confirm%20that%20the%20actions%20were%20developed%20according%20to%20best%20practices.)
+{: .prompt-info}
+
 ## Input Validation
 
 Let's create a test workflow and use an **external source action element** in one of the inputs. The action itself will be straightforward, returning a simple string. This will help us understand how external source actions function within the custom form.
