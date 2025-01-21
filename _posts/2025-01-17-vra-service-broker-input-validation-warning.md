@@ -57,6 +57,6 @@ Similarly, if we have a text field expecting a number within a specific range, t
 
 The main purpose of this warning is to draw our attention to the need for input validation in our code. We should validate inputs before making an API call whenever possible or consume the form directly from the UI to ensure proper constraints are applied.  
 
-In the API calls context, Service Broker and vRO do **not** verify the action element or check for conditions like `if (!input) return "invalid input"`. External validation in the custom form does not affect this process, and there is nothing we can do in the code to make the warning disappear - aside from clicking the **I UNDERSTAND** button, which is just a warning message.  
+Therefore, if the external source action is attached to the workflow's input, Service Broker and vRO do **not** verify the action element or check for conditions like `if (!input) return "invalid input"`. External validation in the custom form does not affect this process, and there is nothing we can do in the code to make the warning disappear - aside from clicking the **I UNDERSTAND** button, which is just a warning message.  
 
 Despite this, the warning is crucial and should not be ignored. Proper input validation is always a best practice. Relying **only** on UI-level validation is risky, as API calls can bypass these checks. In the end, it is always better to enforce validation in the code to ensure data integrity and avoid potential issues.
