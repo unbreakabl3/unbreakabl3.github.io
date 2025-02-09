@@ -6,25 +6,25 @@ media_subpath: /assets/img/vro-user-interaction/
 categories: [VMware, Broadcom, VMware Cloud Foundation Automation, VMware Cloud Foundation Orchestrator, Build Tools, How To, User Interaction]
 tags: [vmware, vro]
 ---
-Have you ever wished that instead of failing, a workflow could prompt you for a missing value? That would be pretty cool, right? Today, we'll discuss one of vRO's often overlooked features: "User Interaction." This feature is incredibly useful and has many practical applications. Two major use cases stand out:
+Have you ever wished that instead of failing, a workflow could prompt you for a missing value? That would be pretty cool, right? Today, we'll discuss one of vRO's often overlooked features: User Interaction. This feature is incredibly useful and has many practical applications. Two use cases for example:
 
-1. If there's a decision point in the workflow, someone should be able to approve it before it proceeds.
-2. If a variable has a null value, it would be helpful to allow someone to provide that value instead of causing the entire workflow to fail.
+1. If there's a decision point in the workflow, someone should be able to approve it before it proceeds. This is especially important in environments where multiple people are involved in the decision-making process.  
+2. If a variable has a null value, it would be helpful to allow someone to provide that value instead of causing the entire workflow to fail. This is particularly useful in cases where the workflow is triggered automatically and the required value is not available.
 
 Enhancing user experience in this way would be a significant improvement!
 
 ## Introduction
 
-User Interaction is a feature introduced in vRO 7 that allows workflows to pause and request input from users. This feature is particularly useful for making workflows more interactive and user-friendly. A key aspect of User Interaction is its support for AD/LDAP groups and users, which enables the assignment of approval tasks to specific individuals or groups. If no one approves the task within a specified time frame, the workflow will fail after a predetermined duration that can be defined. For example, if a workflow may be triggered over the weekend and no one is available to approve the task, we can set it to fail after 48 hours.
+User Interaction is a feature introduced in vRO 5.5 that allows workflows to pause and request input from users. In vRO 8.x, it was significantly improved and involves web designer within the user interaction element. This feature is particularly useful for making workflows more interactive and user-friendly. A key aspect of User Interaction is its support for AD/LDAP groups and users, which enables the assignment of approval tasks to specific individuals or groups. If no one approves the task within a specified time frame, the workflow will fail after a predetermined duration that can be defined. For example, if a workflow may be triggered over the weekend and no one is available to approve the task, we can set it to fail after 48 hours.
 
 > If the workflow is in a `waiting` state, it will remain in that state even if vRO is powered off or restarted, as this information is stored in the database.
-{: .prompt-tip}
+{: .prompt-tip }
 
 We will explore two methods for creating a workflow that involves user interaction. The first method utilizes the User Interaction element within the web client and REST API, while the second method involves Javascript/Typescript coding to achieve the same goal. In this section, we will focus on the web client aspect.
 
 ## How to use User Interaction
 
-User Interaction is an an canvas element that can be added to the workflow. It has the following properties:
+User Interaction is a canvas element that can be added to the workflow. It has the following properties:
 
 | Property Name       | Type            | Description                                      |
 |---------------------|-----------------|--------------------------------------------------|
@@ -33,7 +33,7 @@ User Interaction is an an canvas element that can be added to the workflow. It h
 | security_group    | LdapGroup (can be empty) | LDAP group allowed to respond to the user interaction. |
 | timeout_date     | Date (can be empty) | Absolute date, until which the workflow waits for a user to respond to a user interaction  |
 
-This element can be integrated into the workflow and set up to request input from the user. The workflow will pause at this element and wait for the user to provide their input. Users can submit their input through the vRO web client or via the REST API.
+The workflow will pause at this element and wait for the user to provide their input. It can be integrated into the workflow with the capability for users to submit their input through the vRO web client or via the REST API.
 
 ## Use case
 
@@ -46,7 +46,7 @@ We have a workflow that relies on a variable named `var_0`. The workflow will te
 
 ### Using the Web Client
 
-Lets create a workflow and make it look like this:
+Let's create a workflow and make it look like this:
 
 ![image](image.png){: .shadow }{: .normal }
 _User Interaction workflow example_
@@ -55,7 +55,9 @@ Let's create a variable named `var_0` and focus on it. In our example, we want t
 
 ```javascript
 if (var_0 === 123) {
-    return true;
+    return true; 
+} else {
+    return false;
 }
 ```
 
