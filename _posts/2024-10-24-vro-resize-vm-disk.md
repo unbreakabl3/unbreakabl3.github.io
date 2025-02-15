@@ -309,8 +309,8 @@ Now, we're ready to return this spec and reconfigure the VM by running `diskMana
    backing = (vim.vm.device.FlatVer2BackingInfo) {
       dynamicType = null,
       dynamicProperty = null,
-      fileName = [NACL-01T] win01/win01_2.vmdk,
-      datastore = Stub: moRef = (ManagedObjectReference: type = Datastore, value = datastore-74, serverGuid = null), binding = https://ops-vc01t.embl.de:443/sdk,
+      fileName = [DS] win01/win01_2.vmdk,
+      datastore = Stub: moRef = (ManagedObjectReference: type = Datastore, value = datastore-74, serverGuid = null), binding = https://vc:443/sdk,
       backingObjectId = ,
       diskMode = persistent,
       split = false,
